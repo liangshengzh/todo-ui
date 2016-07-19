@@ -1,0 +1,22 @@
+{
+  "name": "Todo App",
+  "homepage": "https://github.com/liangshengzh/todo-ui",
+  "authors": [
+    "LiangSheng Zhong <liangsheng.zhong@outlook.com>"
+  ],
+  "description": "Manage your task list",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#^1.5.7",
+    "bootstrap": "^3.3.6"
+  }
+}

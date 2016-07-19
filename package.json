@@ -1,0 +1,30 @@
+{
+  "name": "todo-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liangshengzh/todo-ui.git"
+  },
+  "author": "LiangSheng Zhong <liangsheng.zhong@outlook.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liangshengzh/todo-ui/issues"
+  },
+  "homepage": "https://github.com/liangshengzh/todo-ui#readme",
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "gulp": "^3.9.1",
+    "gulp-useref": "^3.1.0",
+    "gulp-if": "^2.0.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^1.5.4",
+    "wiredep": "^4.0.0"
+  },
+  "dependencies": {
+  }
+}
