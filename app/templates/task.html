@@ -1,0 +1,10 @@
+<div>
+  <div>
+    <input type="input" placeholder="What needs to be done?" ng-model="newTask">
+    <button ng-click="add()">Add</button>
+  </div>
+  <div ng-repeat="task in tasks">
+    <input type="checkbox" ng-model="task.done">
+    <span>{{task.name}}</span>
+  </div>
+</div>
