@@ -5,13 +5,13 @@ var todoApp = angular.module('todoApp',['ngRoute']);
 todoApp.config(['$routeProvider', function($routeProvider){
   $routeProvider.
     when('/task',{
-      templateUrl: '../task-list.html',
+      templateUrl: 'task-list.html',
       controller: 'TaskListController'
     }).when('/task/:taskId',{
-      templateUrl: '../task-detail.html',
+      templateUrl: 'task-detail.html',
       controller: 'TaskDetailController'
     }).otherwise({
-      redirectTdo: '/task'
+      redirectTo: '/task'
     });
 }]);
 todoApp.controller('TaskListController', ['$scope', function($scope){
