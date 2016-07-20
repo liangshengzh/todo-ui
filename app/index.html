@@ -14,11 +14,17 @@
   </head>
   <body ng-app="todoApp">
     <div ng-view></div>
-    
+
     <!-- build:js scripts/app.js -->
     <script type="text/javascript" src="/bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script type="text/javascript" src="./scripts/app.js"></script>
+    <script type="text/javascript" src="./scripts/app.config.js"></script>
+    <script type="text/javascript" src="./scripts/task-list.controller.js"></script>
+    <script type="text/javascript" src="./scripts/task-detail.controller.js"></script>
+    <script type="text/javascript" src="./scripts/task-list.service.js"></script>
+    <script type="text/javascript" src="./scripts/task-detail.service.js"></script>
     <!-- endbuild -->
   </body>
 </html>
