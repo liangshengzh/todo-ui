@@ -13,6 +13,7 @@ var size          = require('gulp-size');
 var gulpif        = require('gulp-if');
 var uglify        = require('gulp-uglify');
 var minifyCss     = require('gulp-minify-css');
+var htmlmin       = require('gulp-htmlmin');
 
 
 gulp.task('default',['serve']);
@@ -40,7 +41,7 @@ gulp.task('serve',['styles'], function() {
 });
 
 gulp.task('styles', ['sass'],function(){
-  return gulp.src('app/styles/main.css')
+  return gulp.src('app/styles/＊.css')
       .pipe(gulp.dest('.tmp/styles'));
 });
 
@@ -64,6 +65,9 @@ gulp.task('lint',function() {
 
 gulp.task('html', function(){
     return gulp.src('app/*.html')
-    .pipe(useref())
+    .pipe(useref({searchPath: ['.tmp', 'app', '.']}))
+    .pipe(gulpif('*.js', uglify()))
+    .pipe(gulpif('*.css', minifyCss()))
+    .pipe(gulpif('*.html', htmlmin({collapseWhitespace: true})))
     .pipe(gulp.dest('dist'));
 });
