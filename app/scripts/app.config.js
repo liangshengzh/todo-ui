@@ -1,6 +1,8 @@
 'use strict';
 
- angular.module('todoApp').config(function($routeProvider){
+ angular.module('todoApp').config(function($routeProvider, $httpProvider){
+  $httpProvider.defaults.useXDomain = true;
+  delete $httpProvider.defaults.headers.common['X-Requested-With'];
   $routeProvider.
     when('/task',{
       templateUrl: 'templates/task.html',

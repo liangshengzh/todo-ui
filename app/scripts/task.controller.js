@@ -12,7 +12,13 @@ function taskCtrl($scope, taskApi){
       description: '',
       done: false
     }
-    taskApi.add(task);
+    taskApi.add(task).$promise.then(function(){
+      $scope.tasks = taskApi.list();
+    });
+  }
+
+  $scope.update = function(task){
+    task.$update();
   }
 
 };
