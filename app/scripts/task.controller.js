@@ -21,6 +21,6 @@ function taskCtrl($scope, taskApi){
     task.$update();
   }
 
-};
+}
 
 angular.module('todoApp').controller('taskCtrl',taskCtrl);

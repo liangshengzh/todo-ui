@@ -31,5 +31,5 @@ function taskApi(config, $resource){
   });
 
   return resource;
-};
+}
 angular.module('todoApp').factory('taskApi',['config','$resource', taskApi]);
