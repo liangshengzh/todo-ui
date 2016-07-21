@@ -10,6 +10,9 @@ var autoprefixer  = require('autoprefixer');
 var postcss       = require('gulp-postcss');
 var eslint        = require('gulp-eslint');
 var size          = require('gulp-size');
+var gulpif        = require('gulp-if');
+var uglify        = require('gulp-uglify');
+var minifyCss     = require('gulp-minify-css');
 
 
 gulp.task('default',['serve']);
@@ -58,9 +61,9 @@ gulp.task('lint',function() {
     .pipe(eslint.failAfterError())
     .pipe(size());
 });
+
 gulp.task('html', function(){
     return gulp.src('app/*.html')
-      .pipe(useref({searchPath: ['.tmp', 'app', '.']}))
-      .pipe(gulpif('*.js', uglify()))
-      .pipe(gulp.dest('dist'));
+    .pipe(useref())
+    .pipe(gulp.dest('dist'));
 });
