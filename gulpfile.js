@@ -14,7 +14,9 @@ var gulpif        = require('gulp-if');
 var uglify        = require('gulp-uglify');
 var minifyCss     = require('gulp-minify-css');
 var htmlmin       = require('gulp-htmlmin');
-
+var wiredep       = require('wiredep').stream;
+var inject        = require('gulp-inject');
+var del           = require('del');
 
 gulp.task('default',['serve']);
 
@@ -63,11 +65,17 @@ gulp.task('lint',function() {
     .pipe(size());
 });
 
-gulp.task('html', function(){
+gulp.task('html', ['styles'],function(){
     return gulp.src('app/*.html')
+    .pipe(wiredep())
+    .pipe(inject(gulp.src(['app/**/*.js', 'app/**/*.css'])))
     .pipe(useref({searchPath: ['.tmp', 'app', '.']}))
-    .pipe(gulpif('*.js', uglify()))
+    //.pipe(gulpif('*.js', uglify()))
     .pipe(gulpif('*.css', minifyCss()))
     .pipe(gulpif('*.html', htmlmin({collapseWhitespace: true})))
     .pipe(gulp.dest('dist'));
+});
+
+gulp.task('clean',function() {
+  return del(['.tmp', 'dist']);
 });

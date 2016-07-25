@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Todo App</title>
     <!-- build:css styles/vendor.css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- bower:css -->
+    <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:css styles/app.css -->
@@ -17,9 +18,11 @@
     <div ng-view></div>
 
     <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
     <script type="text/javascript" src="/bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js scripts/app.js -->
